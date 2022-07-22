@@ -6,7 +6,7 @@ BankingAPI is a Go application that implements simple banking features
 ## Packages used
 
 ```go
-
+[GorillaMux](https://github.com/gorilla/mux/)
 ```
 
 ## Contributing
