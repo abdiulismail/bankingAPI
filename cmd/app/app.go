@@ -2,19 +2,20 @@ package app
 
 import (
 	"banking/handlers"
+	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 )
 
 func Start() {
 
-	mux := http.NewServeMux()
+	router := mux.NewRouter()
 
 	//define routes
-	mux.HandleFunc("/greet", handlers.Greet)
-	mux.HandleFunc("/customers", handlers.GetAllCustomers)
+	router.HandleFunc("/greet", handlers.Greet)
+	router.HandleFunc("/customers", handlers.GetAllCustomers)
 
 	//starting server
 	log.Print("started application at port 8080")
-	log.Fatal(http.ListenAndServe(":8080", mux))
+	log.Fatal(http.ListenAndServe(":8080", router))
 }
